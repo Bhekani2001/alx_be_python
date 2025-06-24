@@ -1,6 +1,7 @@
 from oop.book_class import Book
 from oop.library_system import Book as LibBook, EBook, PrintBook, Library
 from oop.polymorphism_demo import Shape, Rectangle, Circle
+from oop.class_static_methods_demo import Calculator
 
 def test_book_class():
     my_book = Book("1984", "George Orwell", 1949)
@@ -30,6 +31,13 @@ def test_polymorphism():
     for shape in shapes:
         print(f"The area of the {shape.__class__.__name__} is: {shape.area()}")
 
+def test_class_static_methods():
+    sum_result = Calculator.add(10, 5)
+    print(f"The sum is: {sum_result}")
+
+    product_result = Calculator.multiply(10, 5)
+    print(f"The product is: {product_result}")
+
 def main():
     print("Testing Book class:")
     test_book_class()
@@ -37,6 +45,8 @@ def main():
     test_library_system()
     print("\nTesting Polymorphism:")
     test_polymorphism()
+    print("\nTesting Class and Static Methods:")
+    test_class_static_methods()
 
 if __name__ == "__main__":
     main()

@@ -1,5 +1,6 @@
 from oop.book_class import Book
 from oop.library_system import Book as LibBook, EBook, PrintBook, Library
+from oop.polymorphism_demo import Shape, Rectangle, Circle
 
 def test_book_class():
     my_book = Book("1984", "George Orwell", 1949)
@@ -20,11 +21,22 @@ def test_library_system():
 
     my_library.list_books()
 
+def test_polymorphism():
+    shapes = [
+        Rectangle(10, 5),
+        Circle(7)
+    ]
+
+    for shape in shapes:
+        print(f"The area of the {shape.__class__.__name__} is: {shape.area()}")
+
 def main():
     print("Testing Book class:")
     test_book_class()
     print("\nTesting Library system:")
     test_library_system()
+    print("\nTesting Polymorphism:")
+    test_polymorphism()
 
 if __name__ == "__main__":
     main()
